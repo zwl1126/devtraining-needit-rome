@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>只显示符合请求类型值的所需选择</description>
+        <field>u_request_type</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>NeedIt Request Type Options</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (newValue == '') {
+        return;
+    }
+
+    var whatneeded = g_form.getValue('u_what_needed');
+
+    //清除 "需要什么 "字段选择列表中的所有选择
+    g_form.clearOptions('u_what_needed');
+
+    // 如果请求类型字段的值是hr，则添加
+    // 两个hr的选择和其他的选择到需要什么字段的选择列表中
+    if (newValue == 'hr') {
+        g_form.addOption('u_what_needed', 'hr1', 'Human Resources 1');
+        g_form.addOption('u_what_needed', 'hr2', 'Human Resources 2');
+        g_form.addOption('u_what_needed', 'other', 'Other');
+    }
+    // 如果请求类型字段的值是设施，则添加
+    // 两个设施选择和其他需要的字段
+    // 选择列表
+    if (newValue == 'facilities') {
+        g_form.addOption('u_what_needed', 'facilities1', 'Facilities 1');
+        g_form.addOption('u_what_needed', 'facilities2', 'Facilities 2');
+        g_form.addOption('u_what_needed', 'other', 'Other');
+    }
+    // 如果请求类型字段的值是合法的，则添加
+    // 两个合法的选择和其他的选择到需要什么字段中
+    // 选择列表
+    if (newValue == 'legal') {
+        g_form.addOption('u_what_needed', 'legal1', 'Legal 1');
+        g_form.addOption('u_what_needed', 'legal2', 'Legal 2');
+        g_form.addOption('u_what_needed', 'other', 'Other');
+    }
+
+    // 如果表单正在加载，并且不是一条新的记录，将u_what_needed值设置为
+    // 在加载之前，从记录中获取的值
+    if (isLoading && !g_form.isNewRecord()) {
+        g_form.setValue('u_what_needed', whatneeded);
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-13 14:38:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>53c1c9b8073b11104d58f16c7c1ed032</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt Request Type Options</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_53c1c9b8073b11104d58f16c7c1ed032</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-13 14:38:37</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
