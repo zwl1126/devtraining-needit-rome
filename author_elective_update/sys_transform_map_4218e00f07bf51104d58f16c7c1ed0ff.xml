@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_map">
+    <sys_transform_map action="DELETE">
+        <active>true</active>
+        <copy_empty_fields>false</copy_empty_fields>
+        <create_new_record_on_empty_coalesce_fields>false</create_new_record_on_empty_coalesce_fields>
+        <enforce_mandatory_fields>All Fields</enforce_mandatory_fields>
+        <name>Import Historic NeedIt Data</name>
+        <order>100</order>
+        <run_business_rules>false</run_business_rules>
+        <run_script>true</run_script>
+        <script><![CDATA[(function transformRow(source, target, map, log, isUpdate) {
+
+    // 如果源数据中没有u_requested_for_email字段。
+    // 从Requested for值中创建目标电子邮件地址。 电子邮件地址 
+    //有格式firstname.lastname@example.com。 将u_requested_for 
+    // 值转换成小写字母。 用.代替空格，然后连接为 
+    // @example.com
+    if (!("u_requested_for_email" in source)) {
+        var name = source.u_requested_for.toLowerCase();
+        target.u_requested_for_email = name.replace(" ", ".") + "@example.com";
+    }
+	
+})(source, target, map, log, action === "update");]]></script>
+        <source_table>x_58872_needit_historic_needit_data</source_table>
+        <sys_class_name>sys_transform_map</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-20 12:27:46</sys_created_on>
+        <sys_id>4218e00f07bf51104d58f16c7c1ed0ff</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Import Historic NeedIt Data</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_transform_map_4218e00f07bf51104d58f16c7c1ed0ff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-21 07:01:41</sys_updated_on>
+        <target_table>x_58872_needit_needit</target_table>
+    </sys_transform_map>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>8fdd87d9dbe6c4543050ac44d4961994</instance_id>
+        <instance_name>dev97545</instance_name>
+        <name>sys_transform_map_4218e00f07bf51104d58f16c7c1ed0ff</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_transform_map"&gt;&lt;sys_transform_map action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;copy_empty_fields&gt;false&lt;/copy_empty_fields&gt;&lt;create_new_record_on_empty_coalesce_fields&gt;false&lt;/create_new_record_on_empty_coalesce_fields&gt;&lt;enforce_mandatory_fields&gt;All Fields&lt;/enforce_mandatory_fields&gt;&lt;name&gt;Import Historic NeedIt Data&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;run_business_rules&gt;false&lt;/run_business_rules&gt;&lt;run_script&gt;true&lt;/run_script&gt;&lt;script&gt;&lt;![CDATA[(function transformRow(source, target, map, log, isUpdate) {
+
+    // 如果源数据中没有u_requested_for_email字段。
+    // 从Requested for值中创建目标电子邮件地址。 电子邮件地址 
+    //有格式firstname.lastname@example.com。 将u_requested_for 
+    // 值转换成小写字母。 用.代替空格，然后连接为 
+    // @example.com
+    if (!("u_requested_for_email" in source)) {
+        var name = source.u_requested_for.toLowerCase();
+        target.u_requested_for_email = name.replace(" ", ".") + "@example.com";
+    }
+	
+})(source, target, map, log, action === "update");]]&gt;&lt;/script&gt;&lt;source_table&gt;x_58872_needit_historic_needit_data&lt;/source_table&gt;&lt;sys_class_name&gt;sys_transform_map&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-12-20 12:27:46&lt;/sys_created_on&gt;&lt;sys_id&gt;4218e00f07bf51104d58f16c7c1ed0ff&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Import Historic NeedIt Data&lt;/sys_name&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_transform_map_4218e00f07bf51104d58f16c7c1ed0ff&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-12-21 07:01:41&lt;/sys_updated_on&gt;&lt;target_table&gt;x_58872_needit_needit&lt;/target_table&gt;&lt;/sys_transform_map&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1754409875</payload_hash>
+        <record_name>Import Historic NeedIt Data</record_name>
+        <reverted_from/>
+        <source>f411afd007f391104d58f16c7c1ed09b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-21 07:01:41</sys_created_on>
+        <sys_id>fb47a45707bb91104d58f16c7c1ed062</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>185337ce5990000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-21 07:01:41</sys_updated_on>
+        <type>Table Transform Map</type>
+        <update_guid>f347a45777bb9110bb3a7a4129231962</update_guid>
+        <update_guid_history>f347a45777bb9110bb3a7a4129231962:1754409875,cbae24033cff511034f0fa0a42f82802:-1333183046,5a39a04faebf5110e8226aadac79d823:914841940,ba58604b7bbf511093cf2cb1dc0de840:-1510988627</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-21 07:15:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_transform_map">sys_transform_map</sys_db_object>
+        <sys_id>5d62eaf604344f0ca41c1ba2dbefb544</sys_id>
+        <sys_metadata>4218e00f07bf51104d58f16c7c1ed0ff</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import Historic NeedIt Data</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_transform_map_4218e00f07bf51104d58f16c7c1ed0ff</sys_update_name>
+        <sys_update_version display_value="sys_transform_map_4218e00f07bf51104d58f16c7c1ed0ff">fb47a45707bb91104d58f16c7c1ed062</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-21 07:15:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>active</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Test1221</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+   var date = g_form.getValue('description');
+	var dateSplit = date.split("/");
+	//var dateSplit1 = dateSplit.unshift('ABC');
+	dateSplit.unshift('0');
+		
+	g_form.addErrorMessage(dateSplit);
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-21 06:33:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>46702cdf077b91104d58f16c7c1ed091</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Test1221</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_46702cdf077b91104d58f16c7c1ed091</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-21 06:56:29</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>8fdd87d9dbe6c4543050ac44d4961994</instance_id>
+        <instance_name>dev97545</instance_name>
+        <name>sys_script_client_46702cdf077b91104d58f16c7c1ed091</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;active&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Test1221&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+   var date = g_form.getValue('description');
+	var dateSplit = date.split("/");
+	//var dateSplit1 = dateSplit.unshift('ABC');
+	dateSplit.unshift('0');
+		
+	g_form.addErrorMessage(dateSplit);
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-12-21 06:33:06&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;46702cdf077b91104d58f16c7c1ed091&lt;/sys_id&gt;&lt;sys_mod_count&gt;17&lt;/sys_mod_count&gt;&lt;sys_name&gt;Test1221&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_46702cdf077b91104d58f16c7c1ed091&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-12-21 06:56:29&lt;/sys_updated_on&gt;&lt;table&gt;x_58872_needit_needit&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>38183292</payload_hash>
+        <record_name>Test1221</record_name>
+        <reverted_from/>
+        <source>f411afd007f391104d58f16c7c1ed09b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-21 06:56:30</sys_created_on>
+        <sys_id>7f16a41707bb91104d58f16c7c1ed07b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1853378254b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-21 06:56:30</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>7716a417e9bb911068574e5f65923b7b</update_guid>
+        <update_guid_history>7716a417e9bb911068574e5f65923b7b:38183292,500624d30dbb9110a1d365608b34b01a:-1669857645,00f5e0d394bb9110812f12b8463e1d11:1467694391,7135e4d341bb9110b59ee6196018eb66:874021296,c615241332bb9110ee784765fa0d20bc:299329724,7705a4d36abb9110b0df0690ae273943:1641245153,f40524d3fbbb9110244a9fff11628b15:-1526345598,7af424d310bb9110e309edf5bc4c2984:953486885,4ad424d39cbb911017888d04862d1710:-141293455,8dc42c13babb911062a6c26f54c0cc98:-1012912649,d2a42c9313bb9110f2ca08076acdd602:782884962,e224e0930dbb9110049a4fa7d9241d78:382609583,15e32c130fbb9110fe1df98509451794:763380971,b4d3a8137fbb91104df8532bbc57924d:-1754708695,e4a12413d5bb91106b8f2aa20ffdd95f:-605190334,6781a813f6bb9110c4f3381b89eff847:-366555634,4c11e4db407b9110074985de45538df7:2017444177,cdc0e8dfcb7b91101cf88f454cde6c67:735534857</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-21 07:01:10</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>61f845854af44315b7be67682ce576f1</sys_id>
+        <sys_metadata>46702cdf077b91104d58f16c7c1ed091</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test1221</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent display_value="NeedIt">b5e463d407f391104d58f16c7c1ed06d</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_script_client_46702cdf077b91104d58f16c7c1ed091</sys_update_name>
+        <sys_update_version display_value="sys_script_client_46702cdf077b91104d58f16c7c1ed091">7f16a41707bb91104d58f16c7c1ed07b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-21 07:01:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
