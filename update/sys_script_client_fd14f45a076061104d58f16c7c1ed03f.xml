@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>当被要求的值发生变化时，使用GetEmail Address Script Include从数据库中检索被要求者的电子邮件地址。</description>
+        <field>u_requested_for</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>NeedIt Populate Email Field</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+
+  // 修改了if，如果newValue == oldValue，则返回，以避免到服务器的不必要的旅行
+  if (isLoading || newValue === '' || newValue == oldValue) {
+    return;
+  }
+
+  // 实例化GetEmailAddress脚本，包括 
+  var getEmailAddr = new GlideAjax('GetEmailAddress');
+  //指定getEmail方法
+  getEmailAddr.addParam('sysparm_name','getEmail');
+  // 传递所要求的sys_id
+  getEmailAddr.addParam('sysparm_userID', g_form.getValue('u_requested_for'));
+  // 向服务器发送请求
+  getEmailAddr.getXML(populateEmailField);
+
+
+  // 当响应从服务器返回时
+  function populateEmailField(response){
+    // 从响应中提取电子邮件地址，清除电子邮件字段中的任何值。
+    //在电子邮件字段中设置新的值
+    var emailFromScriptInclude = response.responseXML.documentElement.getAttribute("answer");
+    g_form.clearValue('u_requested_for_email');
+    g_form.setValue('u_requested_for_email',emailFromScriptInclude);
+  }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-24 12:13:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fd14f45a076061104d58f16c7c1ed03f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt Populate Email Field</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_fd14f45a076061104d58f16c7c1ed03f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-24 12:13:24</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
